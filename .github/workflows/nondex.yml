@@ -13,7 +13,7 @@ jobs:
           distribution: 'temurin'
       - name: Test
         run: 
-          mvn -pl pinot-core test -Dtest=org.apache.pinot.queries.ExplainPlanQueriesTest.testSelectAggregateUsingFilterIndexGroupByVerbose
+          mvn -pl pinot-core -am test -Dtest=org.apache.pinot.queries.ExplainPlanQueriesTest.testSelectAggregateUsingFilterIndexGroupByVerbose
        
   Test_With_Nondex_Shuffling:
     runs-on: ubuntu-latest
@@ -26,4 +26,4 @@ jobs:
           distribution: 'temurin'
       - name: Test
         run: 
-          mvn -pl pinot-core edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.apache.pinot.queries.ExplainPlanQueriesTest.testSelectAggregateUsingFilterIndexGroupByVerbose
+          mvn -pl pinot-core -am edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=org.apache.pinot.queries.ExplainPlanQueriesTest.testSelectAggregateUsingFilterIndexGroupByVerbose
